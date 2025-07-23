@@ -1,6 +1,12 @@
-[![Build Status](https://travis-ci.org/Microsoft/ApplicationInsights-iOS.svg?branch=master)](https://travis-ci.org/Microsoft/ApplicationInsights-iOS)
+# Application Insights for iOS (1.0-beta.8) DEPRECATED
 
-# Application Insights for iOS (1.0-beta.8)
+This SDK is officially deprecated. Please switch to [HockeyApp](https://hockeyapp.net) or consider [MobileCenter](https://www.visualstudio.com/vs/mobile-center/).
+
+You can find more about the transition from Application Insights to HockeyApp [here](https://www.hockeyapp.net/blog/2016/03/11/welcome-application-insights-users.html) and about how Mobile Center will be the future of HockeyApp [here](https://www.hockeyapp.net/blog/2016/11/16/mobile-center-next-generation-hockeyapp.html).
+
+Please don't hesitate to get in touch via [support@hockeyapp.net](mailto:support@hockeyapp.net) if you have questions.
+
+## About
 
 This is the repository of the iOS SDK for Application Insights. [Application Insights](http://azure.microsoft.com/services/application-insights/) is a service that monitors the performance and usage of your published app. The SDK enables you to send telemetry of various kinds (events, traces, sessions etc.) to the Application Insights service where your data can be visualized in the Azure Portal.
 
@@ -9,7 +15,7 @@ The SDK runs on devices with iOS 6.0 or higher. You'll need a subscription to [M
 
 [Application Insights overview](https://azure.microsoft.com/documentation/articles/app-insights-overview/)
 
-##Breaking Changes!
+## Breaking Changes!
 
 Version 1.0-beta.8 of the Application Insights for iOS SDK comes with two major changes:
 
@@ -83,7 +89,7 @@ From our experience, 3rd-party libraries usually reside inside a subdirectory (l
 4. A popup will appear. Select `Create groups for any added folders` and set the checkmark for your target. Then click `Finish`.
 5. Open the `Info.plist` of your app target and add a new field of type *String*. Name it `MSAIInstrumentationKey` and set your Application Insights instrumentation key from 4.1 as its value.
 
-<a id="modifycode"/>
+<a id="modifycode"></a>
 ### 3.5 Modify Code 
 
 **Objective-C**
@@ -158,7 +164,7 @@ It is also possible to set the instrumentation key of your app in code. This wil
 [MSAIApplicationInsights start];
 ```
 
-<a id="linkmanually"/>
+<a id="linkmanually"></a>
 ### 4.2 Linking System Frameworks manually
 
 If you are working with an older project which doesn't support clang modules yet or you for some reason turned off the `Enable Modules (C and Objective-C` and `Link Frameworks Automatically` options in Xcode, you have to manually link some system frameworks:
@@ -278,11 +284,11 @@ Then, in each of your WKInterfaceControllers where you want to use the Applicati
 <a name="developermode"></a>
 ## 5. Developer Mode
 
-###5.1 Batching of data
+### 5.1 Batching of data
 
 The **developer mode** is enabled automatically in case the debugger is attached or if the app is running in the simulator. This will  decrease the number of telemetry items sent in a batch (5 items) as well as the interval items when telemetry will be sent (3 seconds).
 
-###5.2 Logging
+### 5.2 Logging
 
 We're all big fans of a clean debugging output without 3rd-party-SDKs messages piling up in the debugging view, right?!
 That's why Application Insights keeps log messages to a minimum (like critical errors) unless the developer specifically enables debug logging before starting the SDK:
@@ -365,7 +371,7 @@ In the [Azure portal](https://portal.azure.com), open the application resource t
 
 The SDK also allows for some more advanced usages.
 
-### 7.1 Common Properties 
+### 7.1 Common Properties	
 
 It is also possible to set so-called "common properties" that will then be automatically attached to all telemetry data items.
 
@@ -431,7 +437,7 @@ Normally, a random anonymous ID is automatically generated for every user of you
 ```
 
 <a name="additionalconfig"></a>
-## 9.  Set Custom Server Endpoint
+## 9. Set Custom Server Endpoint
 
 You can also configure a different server endpoint for the SDK if needed using a full URL
 
